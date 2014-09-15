@@ -1,0 +1,7 @@
+---
+applications:
+- name: sendgrid-php-12345
+  memory: 128M
+  instances: 1
+  host: sendgrid-php-12345
+  buildpack: https://github.com/zendtech/zend-server-php-buildpack.git 

@@ -1,0 +1,7 @@
+---
+applications:
+- name:	cloudant-php-12345
+  memory: 128M
+  instances: 1
+  host: cloudant-php-12345
+  buildpack: https://github.com/zendtech/zend-server-php-buildpack.git
