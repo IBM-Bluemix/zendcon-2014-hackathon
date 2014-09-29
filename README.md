@@ -17,7 +17,7 @@ Also, download and install a Cloud Foundry command line interface which you will
 
 Cloudant is a JSON data store, a type of a NoSQL database that is an excellent fit for multi-structured data, unstructured data and fast-changing data models.
 
-To try the sample Cloudant application, change directory to ```cloudant``` and then modify the manifest.yml file to replace the following string ```<REPLACEME>``` with a unique value, e.g. a random number. Next execute the following, replacing ```<REPLACEME>``` with the same unique value.
+To try the sample Cloudant application, change directory to ```cloudant``` and then modify the manifest.yml file to replace the following string ```<REPLACEME>``` with a unique value, e.g. a random number. Next execute the following, using the same unique value instead of the  ```<REPLACEME>``` string below.
 
 
 ```
@@ -32,7 +32,7 @@ cf push
 
 Sendgrid is the world's largest email infrastructure as a service provider focused on deliverability, scalability, and reliability. 
 
-To try the sample Sendgrid application, change directory to ```sendgrid``` and then modify the manifest.yml file to replace the following string ```<REPLACEME>``` with a unique value, e.g. a random number. Next execute the following, replacing ```<REPLACEME>``` with the same unique value.
+To try the sample Sendgrid application, change directory to ```sendgrid``` and then modify the manifest.yml file to replace the following string ```<REPLACEME>``` with a unique value, e.g. a random number. Next execute the following, using the same unique value instead of the  ```<REPLACEME>``` string below.
 
 
 ```
