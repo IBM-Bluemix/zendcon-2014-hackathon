@@ -17,7 +17,7 @@ Also, download and install a Cloud Foundry command line interface which you will
 
 Cloudant is a JSON data store, a type of a NoSQL database that is an excellent fit for multi-structured data, unstructured data and fast-changing data models.
 
-To try the sample Cloudant application, change directory to ```cloudant``` and then modify the manifest.yml file to replace the following string <REPLACEME> with a unique value, e.g. your initials. Next execute the following 
+To try the sample Cloudant application, change directory to ```cloudant``` and then modify the manifest.yml file to replace the following string ```<REPLACEME>``` with a unique value, e.g. your initials. Next execute the following 
 
 
 ```
