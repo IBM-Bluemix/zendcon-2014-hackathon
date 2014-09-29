@@ -1,4 +1,4 @@
-#On this page you will find the sample code for the IBM Hackathon at ZendCon 2014. 
+#On this page you will find sample code for the IBM Hackathon at ZendCon 2014. 
 
 To clone the code, use your favorite git client to perform
 
