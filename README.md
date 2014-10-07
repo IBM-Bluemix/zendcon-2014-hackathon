@@ -89,3 +89,16 @@ cf set-env twilio-php-<REPLACEME> MY_TWILIO_NUMBER <TWILIO_NUMBER>
 cf set-env twilio-php-<REPLACEME> MY_DESTINATION_NUMBER <TEXT_NUMBER>
 curl http://twilio-php-<REPLACEME>.mybluemix.net
 ```
+
+##Internet of Things / Wearables
+
+IBM built an Internet of Things (IoT) demo that collects heart rate data from users of a Mio Heart Rate Monitor ( http://www.heartratemonitorsusa.com/mio-alpha.html ), adds GPS-based location information from an iPhone, and persists the result in a Cloudant JSON datastore. 
+
+The demo is deployed to Bluemix and is available from http://activetrack.mybluemix.net . On the demo website you can click on any of the trips on the left menubar, and then click play on the resulting popup to monitor location, speed, and heart rate of the user during the trip. 
+
+The information used in the demo is available via an API. All of the trips shown on the left menu bar are available from using HTTP GET from http://hrtracker.mybluemix.net/api/trips/ . Once you know a specific tripId value from the trips API, you can pull up all of the data points from the trip using HTTP GET to URL like http://hrtracker.mybluemix.net/api/trip/Amanda-1407354135195/data
+
+More detailed documentation is available from http://activetrack-green.mybluemix.net/docs/
+
+
+
