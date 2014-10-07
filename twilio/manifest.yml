@@ -1,0 +1,7 @@
+---
+applications:
+- name: twilio-php-12345
+  memory: 256M
+  instances: 1
+  host: twilio-php-12345
+  buildpack: https://github.com/zendtech/zend-server-php-buildpack.git 
