@@ -6,7 +6,7 @@ To get a copy of this code, use your favorite git client to perform
 git clone https://github.com/IBM-Bluemix/zendcon-2014-hackathon.git
 ```
 
-or click on the Download as Zip button on the right side of this page.
+or click on the Download Zip button on the right side of this page.
 
 The top level directory contains subdirectories for various services you may find useful as you are hacking your code. Remember, you are free to use any service you would like but we encourage you to consider the services listed below.
 
