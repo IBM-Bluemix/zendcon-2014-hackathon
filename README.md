@@ -1,6 +1,6 @@
 #On this page you will find sample code for the IBM Hackathon at ZendCon 2014. 
 
-To clone the code, use your favorite git client to perform
+To get a copy of this code, use your favorite git client to perform
 
 ```
 git clone https://github.com/IBM-Bluemix/zendcon-2014-hackathon.git
@@ -14,8 +14,7 @@ Before starting with any of the following instructions, ensure that you have IBM
 
 Also, download and install a Cloud Foundry command line interface which you will use to deploy to Bluemix. The steps to download the tool are described here: https://www.ng.bluemix.net/docs/#cli/index.html#cli
 
-
-##Cloudant
+##Cloudant Document-Oriented (NoSQL) Database
 
 Cloudant is a JSON data store, a type of a NoSQL database that is an excellent fit for multi-structured data, unstructured data and fast-changing data models.
 
@@ -30,6 +29,23 @@ cf bind-service cloudant-php-<REPLACEME> myCloudant
 cf push
 ```
 Once the ```cf push``` operation completes successfully, the sample application will be accessible with your favorite browser from ```http://cloudant-php-<REPLACEME>.mybluemix.net```
+
+
+##MySQL Relational Database
+
+PHP developer's default choice for a relational database, MySQL needs no introduction. With Bluemix, you can easily get a MySQL database with up to 10MB storage and up to 10 connections. 
+
+To try the sample MySQL application, change directory to ```mysql``` and then modify the manifest.yml file to replace the following string ```<REPLACEME>``` with a unique value, e.g. a random number. Next execute the following, using the same unique value instead of the  ```<REPLACEME>``` string below.
+
+```
+cf login
+cf push
+cf create-service mysql 100 mySql
+cf bind-service mysql-php-<REPLACEME> mySql
+cf push
+```
+Once the ```cf push``` operation completes successfully, the sample application will be accessible with your favorite browser from ```http://mysql-php-<REPLACEME>.mybluemix.net```
+
 
 ##Sendgrid
 
