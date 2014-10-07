@@ -1,7 +1,7 @@
 ---
 applications:
-- name:	mysql-php-12345
+- name:	mysql-php-<REPLACEME>
   memory: 256M
   instances: 1
-  host: mysql-php-12345
+  host: mysql-php-<REPLACEME>
   buildpack: https://github.com/zendtech/zend-server-php-buildpack.git
