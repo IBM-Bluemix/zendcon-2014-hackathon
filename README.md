@@ -96,9 +96,49 @@ IBM built an Internet of Things (IoT) demo that collects heart rate data from us
 
 The demo is deployed to Bluemix and is available from http://activetrack.mybluemix.net . On the demo website you can click on any of the trips on the left menubar, and then click play on the resulting popup to monitor location, speed, and heart rate of the user during the trip. 
 
-The information used in the demo is available via an API. All of the trips shown on the left menu bar are available from using HTTP GET from http://hrtracker.mybluemix.net/api/trips/ . Once you know a specific tripId value from the trips API, you can pull up all of the data points from the trip using HTTP GET to URL like http://hrtracker.mybluemix.net/api/trip/Amanda-1407354135195/data
+The information used in the demo is available via an API. All of the trips shown on the left menu bar are available from using HTTP GET from http://hrtracker.mybluemix.net/api/trips/ . Once you know a specific tripId value from the trips API, you can pull up all of the data points from the trip using HTTP GET to a URL like http://hrtracker.mybluemix.net/api/trip/Amanda-1407354135195/data
 
 More detailed documentation is available from http://activetrack-green.mybluemix.net/docs/
+
+The sample code provided as part of this repository illustrates how to use the REST API to retrieve data. To deploy and test out the sample code, change directory to ```iot``` and execute the following command:
+
+```
+cf login
+cf push
+```
+
+After the command completes successfully, look for the console output specifying the application URL. It should look something like 
+
+```
+usage: 256M x 1 instances
+urls: iot-random-word.mybluemix.net
+```
+
+Open your favorite browser using the URL ending with mybluemix.net (such as iot-random-word.mybluemix.net in the example above) from the console output to access the application. The page should render JSON with the demo data.
+
+##IBM Watson Question Answering (QA) for Travel
+
+The IBM Watson™ Question Answer (QA) for Travel service provides an API, referred to as the QAAPI, that enables you to add the power of the IBM Watson cognitive computing system to your application. With this service, you can connect to Watson, post questions, and receive responses that you can use in your application.
+
+To try the sample Watson QA for Travel application, change directory to ```watson-qa``` and then deploy to Bluemix by executing the following commands:
+
+```
+cf login
+cf create-service question_and_answer question_and_answer_free_plan myWatsonQa
+cf push
+```
+
+After the commands complete successfully, look for the console output specifying the application URL. It should look something like 
+
+```
+usage: 256M x 1 instances
+urls: watson-qa-random-word.mybluemix.net
+```
+
+Open your favorite browser using the URL ending with mybluemix.net (such as watson-qa-random-word.mybluemix.net in the example above) from the console output to access the application. 
+
+The page lets you type in a question, like "What should I do in Prague" and ask Watson for document passages with answers. The web page in the index.html file uses Ajax requests to a PHP based service (implemented in ask.php) which in turn communicates with Watson.
+
 
 
 
