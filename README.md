@@ -18,34 +18,43 @@ Also, download and install a Cloud Foundry command line interface which you will
 
 Cloudant is a JSON data store, a type of a NoSQL database that is an excellent fit for multi-structured data, unstructured data and fast-changing data models.
 
-To try the sample Cloudant application, change directory to ```cloudant``` and then modify the manifest.yml file to replace the following string ```<REPLACEME>``` with a unique value, e.g. a random number. Next execute the following, using the same unique value instead of the  ```<REPLACEME>``` string below.
-
+To try the sample Cloudant application, change directory to ```cloudant``` and and then deploy to Bluemix by executing the following commands:
 
 ```
 cf login
-cf push
 cf create-service cloudantNoSQLDB Shared myCloudant
-cf bind-service cloudant-php-<REPLACEME> myCloudant
 cf push
 ```
-Once the ```cf push``` operation completes successfully, the sample application will be accessible with your favorite browser from ```http://cloudant-php-<REPLACEME>.mybluemix.net```
 
+After the commands complete successfully, look for the console output specifying the application URL. It should look something like 
+
+```
+usage: 256M x 1 instances
+urls: cloudant-random-word.mybluemix.net
+```
+
+Open your favorite browser using the URL ending with mybluemix.net (such as cloudant-random-word.mybluemix.net in the example above) from the console output to access the application. 
 
 ##MySQL Relational Database
 
 PHP developer's default choice for a relational database, MySQL needs no introduction. With Bluemix, you can easily get a MySQL database with up to 10MB storage and up to 10 connections. 
 
-To try the sample MySQL application, change directory to ```mysql``` and then modify the manifest.yml file to replace the following string ```<REPLACEME>``` with a unique value, e.g. a random number. Next execute the following, using the same unique value instead of the  ```<REPLACEME>``` string below.
+To try the sample Cloudant application, change directory to ```mysql``` and and then deploy to Bluemix by executing the following commands:
 
 ```
 cf login
-cf push
 cf create-service mysql 100 mySql
-cf bind-service mysql-php-<REPLACEME> mySql
 cf push
 ```
-Once the ```cf push``` operation completes successfully, the sample application will be accessible with your favorite browser from ```http://mysql-php-<REPLACEME>.mybluemix.net```
 
+After the commands complete successfully, look for the console output specifying the application URL. It should look something like: 
+
+```
+usage: 256M x 1 instances
+urls: mysql-random-word.mybluemix.net
+```
+
+Open your favorite browser using the URL ending with mybluemix.net (such as mysql-random-word.mybluemix.net in the example above) from the console output to access the application. 
 
 ##Sendgrid
 
