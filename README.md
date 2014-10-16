@@ -75,7 +75,7 @@ usage: 256M x 1 instances
 urls: sendgrid-random-word.mybluemix.net
 ```
 
-Open your favorite browser using the URL ending with mybluemix.net (such as mysql-random-word.mybluemix.net in the example above) from the console output to access the application. 
+Open your favorite browser using the URL ending with mybluemix.net (such as sendgrid-random-word.mybluemix.net in the example above) from the console output to access the application. 
 
 ##Twilio
 
