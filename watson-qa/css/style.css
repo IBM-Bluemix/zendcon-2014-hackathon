@@ -1,0 +1,11 @@
+/* style.css
+ * This file provides css styles.
+ */
+progress[value] {
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+   appearance: none;
+
+  width: 100px;
+  height: 20px;
+}

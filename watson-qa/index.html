@@ -1,0 +1,142 @@
+ <!--
+// Licensed under the Apache License. See footer for details.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>IBM Watson Question Answer for Travel</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/watson-bootstrap-dark.css">
+    <link rel="stylesheet" href="/css/browser-compatibility.css">
+    <link rel="stylesheet" href="/css/watson-code.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header row">
+            <div class="col-lg-3">
+                <img src="/images/app.png">
+            </div>
+            <div class="col-lg-8">
+                <h1>IBM Watson Question Answer for Travel <br/>PHP Starter Application</h1>
+                <p>The IBM Watson™ Question Answer (QA) for Travel service provides an API, referred to as the QAAPI, that enables you to add the power of the IBM Watson cognitive computing system to your application. With this service, you can connect to Watson, post questions, and receive responses that you can use in your application.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Try the service</h2>
+                <div class="well">
+                    <form id="qaForm" method="post" class="form-horizontal">
+                        <fieldset>
+                            <div class="form-group row">
+                                <div class="col-lg-10">
+                                    <input id="questionText" name="questionText" placeholder="Type a question..." required="true" value="" class="form-control" >
+                                </div>
+                                <div class="col-lg-2">
+                                    <button onclick="javascript:askQuestion()" class="btn btn-block" type="button">Ask</button>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-lg-3"><a href="javascript:showExample()" class="btn btn-link">See an example  </a>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div id="answerContent" class="col-lg-12" style="display: none;">
+                <h2>Answers and Confidence</h2>
+                <div class="well">
+                    <div class="form-group row">
+                        <div class="col-lg-10">
+                            <h3>Answer</h3>
+                        </div>
+                        <div class="col-lg-2">
+                            <h3>Confidence</h3>
+                        </div>
+                    </div>
+                    <div id="answerTemplate" style="display: none;">
+                        <div class="form-group row">
+                            <div class="col-lg-10">
+                                <p></p>
+                            </div>
+                            <div class="col-lg-2">
+                                <p style="text-align:center;"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="answerBody">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="/js/css_browser_selector.js"></script>
+    <script type="text/javascript" src="/js/example_input.js"></script>
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>    
+    <script type="text/javascript">
+      function askQuestion() {
+        var questionText = $("#questionText")[0].value;
+        console.log(questionText)
+        var jqxhr = $.ajax({ 
+          type: 'POST',
+          url: '/ask',
+          data: JSON.stringify({
+            "question": {
+                "evidenceRequest":{"items":5},
+                "questionText":questionText
+            }
+          }),
+          headers: {
+            'Content-Type': 'application/json',
+          }
+        })
+        .done(function(data) {
+            console.log( "done" );
+            console.log(JSON.stringify(data));
+            $("#answerBody").empty();
+            var answers = data[0].question.evidencelist;
+            for (var i = 0; i < answers.length; i++) {
+                console.log(i);
+                console.log(answers[i]);
+                $("#answerContent").show();
+                var answer = $("#answerTemplate > div").clone();
+                answer.find("div.col-lg-10 > p").append(answers[i].text);
+                answer.find("div.col-lg-2 > p").append(answers[i].value);
+                $("#answerBody").append(answer);
+            }
+        })
+        .fail(function() {
+            console.log( "error" );
+        })
+        .always(function() {
+            console.log( "complete" );
+        });        
+      }
+    </script>    
+</body>
+</html>
+<!--
+// Copyright IBM Corp. 2014
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+-->
