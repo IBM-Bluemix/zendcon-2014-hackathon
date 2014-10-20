@@ -14,6 +14,8 @@ Before starting with any of the following instructions, ensure that you have IBM
 
 Also, download and install a Cloud Foundry command line interface which you will use to deploy to Bluemix. The steps to download the tool are described here: https://www.ng.bluemix.net/docs/#cli/index.html#cli
 
+All of the sample code is preconfigured to deploy a PHP 5.4 compatible application to Zend Server 7.0 Enterprise running on IBM Bluemix. If you want to modify this environment (e.g. to turn on Z-Ray), check out the buildpack instructions available here: https://github.com/zendtech/zend-server-php-buildpack-bluemix
+
 ##Cloudant Document-Oriented (NoSQL) Database
 
 Cloudant is a JSON data store, a type of a NoSQL database that is an excellent fit for multi-structured data, unstructured data and fast-changing data models.
