@@ -58,7 +58,7 @@ urls: mysql-random-word.mybluemix.net
 
 Open your favorite browser using the URL ending with mybluemix.net (such as mysql-random-word.mybluemix.net in the example above) from the console output to access the application. 
 
-##Sendgrid
+##Sendgrid Email as a Service
 
 Sendgrid is the world's largest email infrastructure as a service provider focused on deliverability, scalability, and reliability. 
 
@@ -79,7 +79,7 @@ urls: sendgrid-random-word.mybluemix.net
 
 Open your favorite browser using the URL ending with mybluemix.net (such as sendgrid-random-word.mybluemix.net in the example above) from the console output to access the application. 
 
-##Twilio
+##Twilio Telephony as a Service
 
 Twilio enables phones, VoIP, and messaging to be embedded into web, desktop, and mobile software. To try the Twilio on Bluemix, you will need to register for a Twilio account (unless you already have one) using the following link https://www.twilio.com/try-twilio?promo=bluemix
 
