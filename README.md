@@ -8,7 +8,11 @@ git clone https://github.com/IBM-Bluemix/zendcon-2014-hackathon.git
 
 or click on the Download Zip button on the right side of this page.
 
-The top level directory contains subdirectories for various services you may find useful as you are hacking your code. Remember, you are free to use any service you would like but we encourage you to consider the services listed below.
+Before starting with any of the following instructions, ensure that you have IBM Bluemix account. You can register for one here: https://apps.admin.ibmcloud.com/manage/trial/bluemix.html
+
+Also, download and install a Cloud Foundry command line interface which you will use to deploy to Bluemix. The steps to download the tool are described here: https://www.ng.bluemix.net/docs/#cli/index.html#cli
+
+The top level directory of this project contains subdirectories for various services you may find useful as you are hacking your code. Remember, you are free to use any service you would like but we encourage you to consider the services listed below.
 
 * [Cloudant Document-oriented NoSQL Database](
 https://github.com/IBM-Bluemix/zendcon-2014-hackathon/blob/master/README.md#cloudant-document-oriented-nosql-database)
@@ -17,10 +21,6 @@ https://github.com/IBM-Bluemix/zendcon-2014-hackathon/blob/master/README.md#clou
 * [Twilio Telephony as a Service](https://github.com/IBM-Bluemix/zendcon-2014-hackathon#twilio-telephony-as-a-service)
 * [Internet of Things / Wearables](https://github.com/IBM-Bluemix/zendcon-2014-hackathon#internet-of-things--wearables)
 * [IBM Watson Question Answering for Travel](https://github.com/IBM-Bluemix/zendcon-2014-hackathon#ibm-watson-question-answering-qa-for-travel)
-
-Before starting with any of the following instructions, ensure that you have IBM Bluemix account. You can register for one here: https://apps.admin.ibmcloud.com/manage/trial/bluemix.html
-
-Also, download and install a Cloud Foundry command line interface which you will use to deploy to Bluemix. The steps to download the tool are described here: https://www.ng.bluemix.net/docs/#cli/index.html#cli
 
 All of the sample code is preconfigured to deploy a PHP 5.4 compatible application to Zend Server 7.0 Enterprise running on IBM Bluemix. If you want to modify this environment (e.g. to turn on Z-Ray), check out the buildpack instructions available here: https://github.com/zendtech/zend-server-php-buildpack-bluemix
 
