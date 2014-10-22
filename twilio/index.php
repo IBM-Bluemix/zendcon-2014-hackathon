@@ -3,39 +3,40 @@
 
 require('twilio-php/Services/Twilio.php');
 
-//Get authentication Variables from VCAPS_SERVICES. We first need to pull in our Sendgrid  
+//Get authentication Variables from VCAPS_SERVICES. We first need to pull in our Twilio  
 //connection variables from the VCAPS_SERVICES environment variable. This environment variable 
-//will be put in your project by Bluemix once you bind the Sendgrid service to your Bluemix
-//application. 
-
-var_dump(getenv('VCAPS_SERVICES'));
+//will be put in your project by Bluemix once you bind the Twilio service to your Bluemix
+// application. 
+// var_dump(getenv('VCAPS_SERVICES'));
 
 // vcap_services Extraction 
-$services_json = json_decode(getenv('VCAP_SERVICES'),true);
-$VcapSvs = $services_json["Twilio"][0]["credentials"];
-
 //Debug: If you want to see all the variables returned you can use this line of code. 
-//var_dump($services_json); 
+// var_dump($services_json); 
+$services_json = json_decode(getenv('VCAP_SERVICES'),true);
+$VcapSvs = $services_json["user-provided"][0]["credentials"];
 
-// Extract the VCAP_SERVICES variables for Cloudant connection.  
+// Extract the VCAP_SERVICES variables for Twilio connection.  
  $sid = $VcapSvs["accountSID"];
  $token = $VcapSvs["authToken"];
 
+ try { 	
 
- try {
+ 	if (is_null($sid) || is_null($token) || empty($sid) || empty($token)) {
+ 		echo "<p>Failed to retrieve Twilio authentication parameters.</p>";
+ 		
+ 	} else {
+		$fromNumber = getenv('MY_TWILIO_NUMBER'); //Your Twilio number from twilio.com/user/account/phone-numbers/incoming
+		$toNumber = getenv('MY_DESTINATION_NUMBER'); //Verified Twilio number from twilio.com/user/account/phone-numbers/verified
 
-	$fromNumber = getenv('MY_TWILIO_NUMBER'); //Your Twilio number from twilio.com/user/account/phone-numbers/incoming
-	$toNumber = getenv('MY_DESTINATION_NUMBER'); //Verified Twilio number from twilio.com/user/account/phone-numbers/verified
+		$client = new Services_Twilio($sid, $token);
+		$message = $client->account->messages->sendMessage(
+		  $fromNumber, // From a valid Twilio number
+		  $toNumber, // Text this number
+		  "Hello from IBM Bluemix!"
+		);
 
-	$client = new Services_Twilio($sid, $token);
-	$message = $client->account->messages->sendMessage(
-	  $fromNumber, // From a valid Twilio number
-	  $toNumber, // Text this number
-	  "Hello from IBM Bluemix!"
-	);
-
-	print $message->sid;
-
+		echo "<p>Sent the SMS. Confirmation SID " . $message->sid . "</p>";
+ 	}
 }
   catch(Exception $e) {
   //We sent something to Sag that it didn't expect.

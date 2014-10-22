@@ -22,24 +22,24 @@ $VcapSvs = $services_json["sendgrid"][0]["credentials"];
  $myUsername = $VcapSvs["username"];
  $myPassword = $VcapSvs["password"];
  $mySmtpHostname = $VcapSvs["hostname"];
+
  
  try {
 
   $sendgrid = new SendGrid($myUsername, $myPassword, array("turn_off_ssl_verification" => true));
   $email = new SendGrid\Email();  
-  $email->addTo('mr.smith@mailinator.com')->
-         setFrom('foo@bar.com')->
+  $email->addTo(getenv("FROM_EMAIL"))->
+         setFrom(getenv("TO_EMAIL"))->
          setSubject('Greetings')->
          setText('<strong>Hello from SendGrid!</strong>');	
 
-
-  $response = $sendgrid->send($email);
-
-//Debug: If you want to see the response returned you can use this line of code.   
-  var_dump($response);
-
   // Assuming everything above was executed without error, we have sent the email 
   // and the $response variable has a success string
+  $response = $sendgrid->send($email);
+  echo "<p>Email sent. Sendgrid reply: ";
+  var_dump($response);
+  echo " If the email already arrived, you can read it <a href='http://bluemix.mailinator.com'>here</a></p>";
+
 
 }
   catch(Exception $e) {

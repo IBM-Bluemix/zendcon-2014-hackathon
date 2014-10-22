@@ -1,7 +1,7 @@
 ---
 applications:
-- name: twilio-php-<REPLACEME>
+- name: twilio
   memory: 256M
   instances: 1
-  host: twilio-php-<REPLACEME>
-  buildpack: https://github.com/zendtech/zend-server-php-buildpack.git 
+  host: twilio-${random-word}
+  buildpack: https://github.com/zendtech/zend-server-php-buildpack-bluemix.git
