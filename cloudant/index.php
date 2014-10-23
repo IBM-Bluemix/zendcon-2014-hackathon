@@ -4,7 +4,7 @@
 
  //We need to pull in the Sag PHP library. SAG is an open API used to connect to the Cloudant database. 
  //We only need to do this once!
- require('sag-master/src/Sag.php');
+ require('vendor/autoload.php');
 
 //Get Connection Variables from VCAPS_SERVICES. We first need to pull in our Cloudant database 
 //connection variables from the VCAPS_SERVICES environment variable. This environment variable 
