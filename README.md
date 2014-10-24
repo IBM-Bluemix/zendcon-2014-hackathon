@@ -88,8 +88,8 @@ urls: sendgrid-random-word.mybluemix.net
 Next execute the following commands from your console, to specify custom to/from email addresses using Bluemix environment variables. 
 
 ```
-cf set-env twilio TO_EMAIL bluemix@mailinator.com
-cf set-env twilio FROM_EMAIL foo@bar.com
+cf set-env sendgrid TO_EMAIL bluemix@mailinator.com
+cf set-env sendgrid FROM_EMAIL foo@bar.com
 cf restage
 ```
 
