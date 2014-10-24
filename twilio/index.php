@@ -1,7 +1,7 @@
 <?php
 // Licensed under the Apache License. See footer for details.
 
-require('twilio-php/Services/Twilio.php');
+require('vendor/autoload.php');
 
 //Get authentication Variables from VCAPS_SERVICES. We first need to pull in our Twilio  
 //connection variables from the VCAPS_SERVICES environment variable. This environment variable 

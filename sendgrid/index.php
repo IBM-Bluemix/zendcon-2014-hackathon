@@ -4,7 +4,7 @@
 
 //We need the Sendgrid PHP library. The library is used to send email.
 //We only need to do this once!
-require("sendgrid-php/sendgrid-php.php");
+require("vendor/autoload.php");
 
 //Get authentication Variables from VCAPS_SERVICES. We first need to pull in our Sendgrid  
 //connection variables from the VCAPS_SERVICES environment variable. This environment variable 
