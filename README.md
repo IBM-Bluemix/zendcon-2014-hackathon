@@ -90,7 +90,7 @@ Next execute the following commands from your console, to specify custom to/from
 ```
 cf set-env sendgrid TO_EMAIL bluemix@mailinator.com
 cf set-env sendgrid FROM_EMAIL foo@bar.com
-cf restage
+cf restage sendgrid
 ```
 
 Open your favorite browser using the URL ending with mybluemix.net (such as sendgrid-random-word.mybluemix.net in the example above) from the console output to access the application. 
@@ -126,7 +126,7 @@ Next execute the following commands from your console, using your Twilio assigne
 ```
 cf set-env twilio MY_TWILIO_NUMBER <TWILIO_NUMBER>
 cf set-env twilio MY_DESTINATION_NUMBER <TEXT_NUMBER>
-cf restage
+cf restage twilio
 ```
 
 To test the application, open your favorite browser using the application URL you noted earlier, i.e the one ending with mybluemix.net.
