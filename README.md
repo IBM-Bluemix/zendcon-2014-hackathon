@@ -139,8 +139,6 @@ The demo is deployed to Bluemix and is available from http://activetrack.mybluem
 
 The information used in the demo is available via an API. All of the trips shown on the left menu bar are available from using HTTP GET from http://hrtracker.mybluemix.net/api/trips/ . Once you know a specific tripId value from the trips API, you can pull up all of the data points from the trip using HTTP GET to a URL like http://hrtracker.mybluemix.net/api/trip/Amanda-1407354135195/data
 
-More detailed documentation is available from http://activetrack-green.mybluemix.net/docs/
-
 The sample code provided as part of this repository illustrates how to use the REST API to retrieve data. To deploy and test out the sample code, change directory to ```iot``` and execute the following command:
 
 ```
