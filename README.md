@@ -178,6 +178,13 @@ Open your favorite browser using the URL ending with mybluemix.net (such as wats
 
 The page lets you type in a question, like "What should I do in Prague" and ask Watson for document passages with answers. The web page in the index.html file uses Ajax requests to a PHP based service (implemented in ask.php) which in turn communicates with Watson.
 
+## Frequently Asked Questions
+
+0. **How does the Cloudant sample work?** The sample requires the Cloudant services to be bound to the application. Once the service is bound, the sample code in index.php pulls the credentials to connect to an application specific Cloudant instance from the VCAP_SERVICES environment variable. Once a user opens the application URL, the sample uses the Sag library to connect to your application's Cloudant instance, create a database and insert a JSON object in the database. If the insert completes successfully, the "hello world" message from the JSON object is retrieved from the database and echoed back to the browser.
+
+0. **How do I pass environment variables to my application?** In Bluemix and Cloud Foundry you can use the command line tool to set application-specific environment variables. This is done using the ```cf set-env``` command or in your deployment manifest.yml file. More details on how to set the environment variables is available from http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#env-block
+You can also use the [email as a service sample](https://github.com/IBM-Bluemix/zendcon-2014-hackathon#sendgrid-email-as-a-service) as an example.
+
 
 
 
