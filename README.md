@@ -180,7 +180,16 @@ The page lets you type in a question, like "What should I do in Prague" and ask 
 
 ## Frequently Asked Questions
 
-0. **How does the Cloudant sample work?** The sample requires the Cloudant services to be bound to the application. Once the service is bound, the sample code in index.php pulls the credentials to connect to an application specific Cloudant instance from the VCAP_SERVICES environment variable. Once a user opens the application URL, the sample uses the Sag library to connect to your application's Cloudant instance, create a database and insert a JSON object in the database. If the insert completes successfully, the "hello world" message from the JSON object is retrieved from the database and echoed back to the browser.
+0. **How does the Cloudant sample work?** The sample requires a Cloudant service to be bound to the application. Once the service is bound, the sample code in index.php pulls the credentials from the VCAP_SERVICES environment variable to connect to an application specific Cloudant instance. Once a user opens the application URL, the sample uses the Sag library to connect to your application's Cloudant instance, create a database and insert a JSON object in the database. If the insert completes successfully, the "hello world" message from the JSON object is retrieved from the database and echoed back to the browser.
+
+0. **How does the Internet of Things / Wearables sample work?** The sample uses geocoded data available from the [Active Tracker](http://activetrack.mybluemix.net/) app which contains sample runs, walks, and car rides from IBM users of an iOS based heart rate monitor. Sample implementation in the index.php file relies on the REST API of the Active Tracker to pull geocoded data points that include heart rate, speed, and other data. After visualizing this data using [Active Tracker](http://activetrack.mybluemix.net/) you can try building leaderboards, statistical summaries, and other cool visualizations from this sample code.
+
+0. **How does the MySQL sample work?** The sample requires a MySQL service to be bound to the application. Once the service is bound, the sample code in index.php pulls credentials along with connection information (e.g. hostname) from the VCAP_SERVICES environment variable to connect to an application specific MySQL instance. Once a user opens the application URL, the sample code connects to MySQL, creates a table, inserts a records, retrieves a record, echoes the record to the browser, and finally deletes the record from the database.
+
+0. **How does the IBM Watson QA for Travel sample work?**
+0. **How does the Sendgrid Email as a Service sample work?**
+0. **How does the Twilio Telephony as a Service sample work?**
+
 
 0. **How do I pass environment variables to my application?** In Bluemix and Cloud Foundry you can use the command line tool to set application-specific environment variables. This is done using the ```cf set-env``` command or in your deployment manifest.yml file. More details on how to set the environment variables is available from http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#env-block
 You can also use the [email as a service sample](https://github.com/IBM-Bluemix/zendcon-2014-hackathon#sendgrid-email-as-a-service) as an example.
