@@ -1,5 +1,7 @@
 #On this page you will find sample code for the IBM Hackathon at ZendCon 2014. 
 
+**THE PRESENTATION FROM THE HACKATHON KICKOFF SESSION IS AVAILABLE HERE*** http://www.slideshare.net/kosipov/ibm-hackathonzendcon-2014
+
 To get a copy of this code, use your favorite git client to perform
 
 ```
